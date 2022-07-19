@@ -74,7 +74,9 @@ namespace ModernWpf.Controls
             set => SetValue(TitleProperty, value);
         }
 
-        #endregion        
+        #endregion Title
+
+
 
         #region TitleTemplate
 
@@ -91,7 +93,7 @@ namespace ModernWpf.Controls
             set => SetValue(TitleTemplateProperty, value);
         }
 
-        #endregion
+        #endregion TitleTemplate
 
         #region PrimaryButtonText
 
@@ -108,7 +110,7 @@ namespace ModernWpf.Controls
             set => SetValue(PrimaryButtonTextProperty, value);
         }
 
-        #endregion
+        #endregion PrimaryButtonText
 
         #region PrimaryButtonAutomationId
 
@@ -125,7 +127,7 @@ namespace ModernWpf.Controls
             set => SetValue(PrimaryButtonAutomationIdProperty, value);
         }
 
-        #endregion
+        #endregion PrimaryButtonAutomationId
 
         #region PrimaryButtonCommand
 
@@ -142,7 +144,7 @@ namespace ModernWpf.Controls
             set => SetValue(PrimaryButtonCommandProperty, value);
         }
 
-        #endregion
+        #endregion PrimaryButtonCommand
 
         #region PrimaryButtonCommandParameter
 
@@ -159,7 +161,7 @@ namespace ModernWpf.Controls
             set => SetValue(PrimaryButtonCommandParameterProperty, value);
         }
 
-        #endregion
+        #endregion PrimaryButtonCommandParameter
 
         #region PrimaryButtonStyle
 
@@ -176,7 +178,7 @@ namespace ModernWpf.Controls
             set => SetValue(PrimaryButtonStyleProperty, value);
         }
 
-        #endregion
+        #endregion PrimaryButtonStyle
 
         #region IsPrimaryButtonEnabled
 
@@ -193,7 +195,7 @@ namespace ModernWpf.Controls
             set => SetValue(IsPrimaryButtonEnabledProperty, value);
         }
 
-        #endregion
+        #endregion IsPrimaryButtonEnabled
 
         #region SecondaryButtonText
 
@@ -210,7 +212,7 @@ namespace ModernWpf.Controls
             set => SetValue(SecondaryButtonTextProperty, value);
         }
 
-        #endregion
+        #endregion SecondaryButtonText
 
         #region SecondaryButtonAutomationId
 
@@ -227,7 +229,7 @@ namespace ModernWpf.Controls
             set => SetValue(SecondaryButtonAutomationIdProperty, value);
         }
 
-        #endregion
+        #endregion SecondaryButtonAutomationId
 
         #region SecondaryButtonCommand
 
@@ -244,7 +246,7 @@ namespace ModernWpf.Controls
             set => SetValue(SecondaryButtonCommandProperty, value);
         }
 
-        #endregion
+        #endregion SecondaryButtonCommand
 
         #region SecondaryButtonCommandParameter
 
@@ -261,7 +263,7 @@ namespace ModernWpf.Controls
             set => SetValue(SecondaryButtonCommandParameterProperty, value);
         }
 
-        #endregion
+        #endregion SecondaryButtonCommandParameter
 
         #region SecondaryButtonStyle
 
@@ -278,7 +280,7 @@ namespace ModernWpf.Controls
             set => SetValue(SecondaryButtonStyleProperty, value);
         }
 
-        #endregion
+        #endregion SecondaryButtonStyle
 
         #region IsSecondaryButtonEnabled
 
@@ -295,7 +297,7 @@ namespace ModernWpf.Controls
             set => SetValue(IsSecondaryButtonEnabledProperty, value);
         }
 
-        #endregion
+        #endregion IsSecondaryButtonEnabled
 
         #region CloseButtonText
 
@@ -312,7 +314,7 @@ namespace ModernWpf.Controls
             set => SetValue(CloseButtonTextProperty, value);
         }
 
-        #endregion
+        #endregion CloseButtonText
 
         #region CloseButtonAutomationId
 
@@ -329,7 +331,7 @@ namespace ModernWpf.Controls
             set => SetValue(CloseButtonAutomationIdProperty, value);
         }
 
-        #endregion
+        #endregion CloseButtonAutomationId
 
         #region CloseButtonCommand
 
@@ -346,7 +348,7 @@ namespace ModernWpf.Controls
             set => SetValue(CloseButtonCommandProperty, value);
         }
 
-        #endregion
+        #endregion CloseButtonCommand
 
         #region CloseButtonCommandParameter
 
@@ -363,7 +365,7 @@ namespace ModernWpf.Controls
             set => SetValue(CloseButtonCommandParameterProperty, value);
         }
 
-        #endregion
+        #endregion CloseButtonCommandParameter
 
         #region CloseButtonStyle
 
@@ -380,7 +382,7 @@ namespace ModernWpf.Controls
             set => SetValue(CloseButtonStyleProperty, value);
         }
 
-        #endregion
+        #endregion CloseButtonStyle
 
         #region DefaultButton
 
@@ -402,7 +404,7 @@ namespace ModernWpf.Controls
             ((ContentDialog)d).UpdateDefaultButtonStates(true);
         }
 
-        #endregion
+        #endregion DefaultButton
 
         #region FullSizeDesired
 
@@ -424,7 +426,7 @@ namespace ModernWpf.Controls
             ((ContentDialog)d).UpdateVisualStates(true);
         }
 
-        #endregion
+        #endregion FullSizeDesired
 
         #region CornerRadius
 
@@ -441,7 +443,7 @@ namespace ModernWpf.Controls
             set => SetValue(CornerRadiusProperty, value);
         }
 
-        #endregion
+        #endregion CornerRadius
 
         #region IsShadowEnabled
 
@@ -458,7 +460,7 @@ namespace ModernWpf.Controls
             set => SetValue(IsShadowEnabledProperty, value);
         }
 
-        #endregion
+        #endregion IsShadowEnabled
 
         #region OpenDialog
 
@@ -478,7 +480,7 @@ namespace ModernWpf.Controls
             window.SetValue(OpenDialogProperty, value);
         }
 
-        #endregion
+        #endregion OpenDialog
 
         public Window Owner { get; set; }
 
@@ -886,9 +888,11 @@ namespace ModernWpf.Controls
                             case ContentDialogButton.Primary:
                                 button = PrimaryButton;
                                 break;
+
                             case ContentDialogButton.Secondary:
                                 button = SecondaryButton;
                                 break;
+
                             case ContentDialogButton.Close:
                                 button = CloseButton;
                                 break;
@@ -991,9 +995,11 @@ namespace ModernWpf.Controls
                 case ContentDialogButton.Primary:
                     stateName = PrimaryAsDefaultButtonState;
                     break;
+
                 case ContentDialogButton.Secondary:
                     stateName = SecondaryAsDefaultButtonState;
                     break;
+
                 case ContentDialogButton.Close:
                     stateName = CloseAsDefaultButtonState;
                     break;

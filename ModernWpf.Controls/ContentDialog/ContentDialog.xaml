@@ -257,6 +257,7 @@
                                                 <RowDefinition Height="Auto" />
                                             </Grid.RowDefinitions>
                                             <ScrollViewer
+                                                AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}"
                                                 x:Name="ContentScrollViewer"
                                                 HorizontalScrollBarVisibility="Disabled"
                                                 VerticalScrollBarVisibility="Disabled"
@@ -270,7 +271,8 @@
                                                         <ContentControl
                                                             x:Name="Title"
                                                             Margin="{StaticResource ContentDialogTitleMargin}"
-                                                            Content="{TemplateBinding Title}"                                                            
+                                                            Content="{TemplateBinding Title}"
+                                                            AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}"
                                                             ContentTemplate="{TemplateBinding TitleTemplate}"
                                                             FontSize="20"
                                                             FontFamily="{DynamicResource {x:Static SystemFonts.MessageFontFamilyKey}}"
@@ -283,12 +285,14 @@
                                                             <ContentControl.Template>
                                                                 <ControlTemplate TargetType="ContentControl">
                                                                     <ui:ContentPresenterEx
-                                                                        Content="{TemplateBinding Content}"                                                                                                       
+                                                                        AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}"
+                                                                        Content="{TemplateBinding Content}"
                                                                         TextWrapping="Wrap"
                                                                         ContentTemplate="{TemplateBinding ContentTemplate}"
                                                                         Margin="{TemplateBinding Padding}"
                                                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                                    <!--TitleAutomationId="{TemplateBinding Content}"-->
                                                                 </ControlTemplate>
                                                             </ContentControl.Template>
                                                         </ContentControl>
@@ -335,7 +339,7 @@
                                                     HorizontalAlignment="Stretch" />
                                                 <Button
                                                     x:Name="CloseButton"
-                                                    Grid.Column="4" 
+                                                    Grid.Column="4"
                                                     Content="{TemplateBinding CloseButtonText}"
                                                     Style="{TemplateBinding CloseButtonStyle}"
                                                     AutomationProperties.AutomationId="{TemplateBinding CloseButtonAutomationId}"

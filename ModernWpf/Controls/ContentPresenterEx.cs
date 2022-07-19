@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -150,7 +151,7 @@ namespace ModernWpf.Controls
                                 new PropertyChangedCallback(OnTextWrappingChanged)));
 
         /// <summary>
-        /// The TextWrapping property controls whether or not text wraps 
+        /// The TextWrapping property controls whether or not text wraps
         /// when it reaches the flow edge of its containing block box.
         /// </summary>
         public TextWrapping TextWrapping
@@ -172,13 +173,14 @@ namespace ModernWpf.Controls
             }
         }
 
-        #endregion
+        #endregion Public Properties
 
         #region Private Properties
 
         private bool IsUsingDefaultTemplate { get; set; }
 
         private TextBlock _textBlock;
+
         private TextBlock TextBlock
         {
             get => _textBlock;
@@ -199,6 +201,7 @@ namespace ModernWpf.Controls
         }
 
         private AccessText _accessText;
+
         private AccessText AccessText
         {
             get => _accessText;
@@ -218,7 +221,7 @@ namespace ModernWpf.Controls
             }
         }
 
-        #endregion
+        #endregion Private Properties
 
         #region Protected Methods
 
@@ -261,6 +264,15 @@ namespace ModernWpf.Controls
             {
                 if (visualAdded is TextBlock textBlock)
                 {
+                    // Set the title's automation ID
+                    // Note: This is NOT the way we should be doing this ultimately.
+                    // I also don't know of a better way right now.
+
+                    var parentAutomationId = GetValue(AutomationProperties.AutomationIdProperty);
+                    var newAutomationId = $"{parentAutomationId} title";
+
+                    textBlock.SetValue(AutomationProperties.AutomationIdProperty, newAutomationId);
+
                     TextBlock = textBlock;
                 }
                 else if (visualAdded is AccessText accessText)
@@ -281,6 +293,6 @@ namespace ModernWpf.Controls
             }
         }
 
-        #endregion
+        #endregion Protected Methods
     }
 }
