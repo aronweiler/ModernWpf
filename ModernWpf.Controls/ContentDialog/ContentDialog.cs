@@ -74,7 +74,7 @@ namespace ModernWpf.Controls
             set => SetValue(TitleProperty, value);
         }
 
-        #endregion
+        #endregion        
 
         #region TitleTemplate
 
@@ -106,6 +106,23 @@ namespace ModernWpf.Controls
         {
             get => (string)GetValue(PrimaryButtonTextProperty);
             set => SetValue(PrimaryButtonTextProperty, value);
+        }
+
+        #endregion
+
+        #region PrimaryButtonAutomationId
+
+        public static readonly DependencyProperty PrimaryButtonAutomationIdProperty =
+            DependencyProperty.Register(
+                nameof(PrimaryButtonAutomationId),
+                typeof(string),
+                typeof(ContentDialog),
+                null);
+
+        public string PrimaryButtonAutomationId
+        {
+            get => (string)GetValue(PrimaryButtonAutomationIdProperty);
+            set => SetValue(PrimaryButtonAutomationIdProperty, value);
         }
 
         #endregion
@@ -195,6 +212,23 @@ namespace ModernWpf.Controls
 
         #endregion
 
+        #region SecondaryButtonAutomationId
+
+        public static readonly DependencyProperty SecondaryButtonAutomationIdProperty =
+            DependencyProperty.Register(
+                nameof(SecondaryButtonAutomationId),
+                typeof(string),
+                typeof(ContentDialog),
+                null);
+
+        public string SecondaryButtonAutomationId
+        {
+            get => (string)GetValue(SecondaryButtonAutomationIdProperty);
+            set => SetValue(SecondaryButtonAutomationIdProperty, value);
+        }
+
+        #endregion
+
         #region SecondaryButtonCommand
 
         public static readonly DependencyProperty SecondaryButtonCommandProperty =
@@ -276,6 +310,23 @@ namespace ModernWpf.Controls
         {
             get => (string)GetValue(CloseButtonTextProperty);
             set => SetValue(CloseButtonTextProperty, value);
+        }
+
+        #endregion
+
+        #region CloseButtonAutomationId
+
+        public static readonly DependencyProperty CloseButtonAutomationIdProperty =
+            DependencyProperty.Register(
+                nameof(CloseButtonAutomationId),
+                typeof(string),
+                typeof(ContentDialog),
+                null);
+
+        public string CloseButtonAutomationId
+        {
+            get => (string)GetValue(CloseButtonAutomationIdProperty);
+            set => SetValue(CloseButtonAutomationIdProperty, value);
         }
 
         #endregion

@@ -270,7 +270,7 @@
                                                         <ContentControl
                                                             x:Name="Title"
                                                             Margin="{StaticResource ContentDialogTitleMargin}"
-                                                            Content="{TemplateBinding Title}"
+                                                            Content="{TemplateBinding Title}"                                                            
                                                             ContentTemplate="{TemplateBinding TitleTemplate}"
                                                             FontSize="20"
                                                             FontFamily="{DynamicResource {x:Static SystemFonts.MessageFontFamilyKey}}"
@@ -283,7 +283,7 @@
                                                             <ContentControl.Template>
                                                                 <ControlTemplate TargetType="ContentControl">
                                                                     <ui:ContentPresenterEx
-                                                                        Content="{TemplateBinding Content}"
+                                                                        Content="{TemplateBinding Content}"                                                                                                       
                                                                         TextWrapping="Wrap"
                                                                         ContentTemplate="{TemplateBinding ContentTemplate}"
                                                                         Margin="{TemplateBinding Padding}"
@@ -324,18 +324,21 @@
                                                     Content="{TemplateBinding PrimaryButtonText}"
                                                     IsEnabled="{TemplateBinding IsPrimaryButtonEnabled}"
                                                     Style="{TemplateBinding PrimaryButtonStyle}"
+                                                    AutomationProperties.AutomationId="{TemplateBinding PrimaryButtonAutomationId}"
                                                     HorizontalAlignment="Stretch" />
                                                 <Button
                                                     x:Name="SecondaryButton"
                                                     Content="{TemplateBinding SecondaryButtonText}"
                                                     IsEnabled="{TemplateBinding IsSecondaryButtonEnabled}"
                                                     Style="{TemplateBinding SecondaryButtonStyle}"
+                                                    AutomationProperties.AutomationId="{TemplateBinding SecondaryButtonAutomationId}"
                                                     HorizontalAlignment="Stretch" />
                                                 <Button
                                                     x:Name="CloseButton"
                                                     Grid.Column="4" 
                                                     Content="{TemplateBinding CloseButtonText}"
                                                     Style="{TemplateBinding CloseButtonStyle}"
+                                                    AutomationProperties.AutomationId="{TemplateBinding CloseButtonAutomationId}"
                                                     HorizontalAlignment="Stretch" />
                                             </Grid>
                                         </Grid>
